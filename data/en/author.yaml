@@ -1,7 +1,7 @@
 # some information about you
 name: "Chenhaoqing"
 nickname: "!"
-image: "images/avatar.jpg"
+image: "images/author/author.jpg"
 
 # greeting message before your name. it will default to "Hi! I am" if not provided
 greeting: "Hello World"
