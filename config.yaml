@@ -54,4 +54,8 @@ params:
     inverted: "images/site/inverted-logo.png"
     favicon: "images/site/favicon.png"
 
-
+  features:
+    analytics:
+      enabled: true
+      goatCounter:
+        code: chenhaoqing
