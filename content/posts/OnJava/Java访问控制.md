@@ -1,18 +1,15 @@
 ---
-title: "On Java读书笔记--访问控制"
+title: Java访问控制
 date: 2022-06-04T23:57:25+08:00
 description: Java访问控制
 menu:
   sidebar:
     name: Java访问控制
-    identifier: Java访问控制
+    identifier: On Java-Java访问控制
+    parent: OnJava
     weight: 10
 hero: fernand-de-canne-Unl-fQ1_P5Q-unsplash.jpg
-tags: ["Basic", "Multi-lingual"]
-categories: ["Basic"]
 ---
-
-# On Java读书笔记--访问控制
 
 ## 访问修饰符
 Java提供了3个显式关键字来完成访问控制，即`public`、`private`以及`protected`。
