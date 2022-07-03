@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Chenhaoqing's Blog</title><link>https://chenhaoqing.github.io/posts/</link><description>Recent content in Posts on Chenhaoqing's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 02 Jul 2022 11:43:00 +0800</lastBuildDate><atom:link href="https://chenhaoqing.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>操作后的最大异或和</title><link>https://chenhaoqing.github.io/posts/leetcode/2317_%E6%93%8D%E4%BD%9C%E5%90%8E%E7%9A%84%E6%9C%80%E5%A4%A7%E5%BC%82%E6%88%96%E5%92%8C/</link><pubDate>Sat, 02 Jul 2022 11:43:00 +0800</pubDate><guid>https://chenhaoqing.github.io/posts/leetcode/2317_%E6%93%8D%E4%BD%9C%E5%90%8E%E7%9A%84%E6%9C%80%E5%A4%A7%E5%BC%82%E6%88%96%E5%92%8C/</guid><description>题目 难度：中等
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Chenhaoqing's Blog</title><link>https://chenhaoqing.github.io/posts/</link><description>Recent content in Posts on Chenhaoqing's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 03 Jul 2022 23:43:00 +0800</lastBuildDate><atom:link href="https://chenhaoqing.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>每日温度</title><link>https://chenhaoqing.github.io/posts/leetcode/739_%E6%AF%8F%E6%97%A5%E6%B8%A9%E5%BA%A6/</link><pubDate>Sun, 03 Jul 2022 23:43:00 +0800</pubDate><guid>https://chenhaoqing.github.io/posts/leetcode/739_%E6%AF%8F%E6%97%A5%E6%B8%A9%E5%BA%A6/</guid><description>题目 难度：中等
+描述 给定一个整数数组 temperatures ，表示每天的温度，返回一个数组 answer ，其中 answer[i] 是指对于第 i 天，下一个更高温度出现在几天后。如果气温在这之后都不会升高，请在该位置用 0 来代替。
+示例 示例 1:
+输入: temperatures = [73,74,75,71,69,72,76,73]
+输出: [1,1,4,2,1,1,0,0]
+示例 2：
+输入: temperatures = [30,40,50,60]
+输出: [1,1,1,0]
+示例 3:
+输入: temperatures = [30,60,90]
+输出: [1,1,0]
+解题思路 暴力法 题目是求下一个更高温度是出现在几天后；因此，针对数组中的每一个元素，遍历其之后的所有元素，找到第一个比其更高的温度后，两者的数组下标差值即为答案。
+单调栈 可以观察得知，假如有元素从左到右为A-&amp;gt;B-&amp;gt;C。如果C的值比B小，则C必不可能为比A值大的第一个元素（因为在其左边的B也会比A值大）。因此，在遍历数组的过程中，可以利用此特性，借用栈实现单调递减栈，减少比较的次数。
+具体实现方式为：将新遍历到的数组元素A与栈顶元素B（栈中实际存储数组的下标，比较时需要转换为数组中的实际元素值）做大小比较。
+如果A &amp;gt; B的大，则表明A为比B值更大的第一个元素；求两者的数组下标差值即可。并将B出栈，持续比较A与B的大小关系，直到栈为空或者A &amp;lt;= B为止 如果A &amp;lt;= B，则表明还未找到比B大的第一个元素，需要将A入栈，遍历下一个数组元素 我的题解 暴力法 class Solution { public int[] dailyTemperatures(int[] temperatures) { int[] ans = new int[temperatures.</description></item><item><title>操作后的最大异或和</title><link>https://chenhaoqing.github.io/posts/leetcode/2317_%E6%93%8D%E4%BD%9C%E5%90%8E%E7%9A%84%E6%9C%80%E5%A4%A7%E5%BC%82%E6%88%96%E5%92%8C/</link><pubDate>Sat, 02 Jul 2022 11:43:00 +0800</pubDate><guid>https://chenhaoqing.github.io/posts/leetcode/2317_%E6%93%8D%E4%BD%9C%E5%90%8E%E7%9A%84%E6%9C%80%E5%A4%A7%E5%BC%82%E6%88%96%E5%92%8C/</guid><description>题目 难度：中等
 描述 给你一个下标从0开始的整数数组nums。一次操作中，选择任意非负整数x和一个下标i，更新nums[i]为nums[i] AND (nums[i] XOR x)。
 注意，AND是逐位与运算，XOR是逐位异或运算。
 请你执行任意次更新操作，并返回nums中所有元素最大逐位异或和。
