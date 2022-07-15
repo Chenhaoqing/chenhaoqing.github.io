@@ -1,4 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chenhaoqing's Blog</title><link>https://chenhaoqing.github.io/</link><description>Recent content on Chenhaoqing's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 03 Jul 2022 23:43:00 +0800</lastBuildDate><atom:link href="https://chenhaoqing.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>每日温度</title><link>https://chenhaoqing.github.io/posts/leetcode/739_%E6%AF%8F%E6%97%A5%E6%B8%A9%E5%BA%A6/</link><pubDate>Sun, 03 Jul 2022 23:43:00 +0800</pubDate><guid>https://chenhaoqing.github.io/posts/leetcode/739_%E6%AF%8F%E6%97%A5%E6%B8%A9%E5%BA%A6/</guid><description>题目 难度：中等
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chenhaoqing's Blog</title><link>https://chenhaoqing.github.io/</link><description>Recent content on Chenhaoqing's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 16 Jul 2022 00:10:00 +0800</lastBuildDate><atom:link href="https://chenhaoqing.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>猜数字大小</title><link>https://chenhaoqing.github.io/posts/leetcode/374_%E7%8C%9C%E6%95%B0%E5%AD%97%E5%A4%A7%E5%B0%8F/</link><pubDate>Sat, 16 Jul 2022 00:10:00 +0800</pubDate><guid>https://chenhaoqing.github.io/posts/leetcode/374_%E7%8C%9C%E6%95%B0%E5%AD%97%E5%A4%A7%E5%B0%8F/</guid><description>题目 难度：简单
+描述 猜数字游戏的规则如下：
+每轮游戏，我都会从1到n随机选择一个数字。 请你猜选出的是哪个数字。 如果你猜错了，我会告诉你，你猜测的数字比我选出的数字是大了还是小了。 你可以通过调用一个预先定义好的接口int guess(int num)来获取猜测结果，返回值一共有3种可能的情况（-1，1或0）：
+-1：我选出的数字比你猜的数字小 pick &amp;lt; num 1：我选出的数字比你猜的数字大 pick &amp;gt; num 0：我选出的数字和你猜的数字一样。恭喜！你猜对了！pick == num 返回我选出的数字。 示例 示例 1:
+输入：n = 10, pick = 6
+输出：6
+示例 2：
+输入：n = 1, pick = 1
+输出：1
+解题思路 通过二分查找不断缩减范围，直至找到最终结果。
+关键点 一开始提交的为下面的版本，多个用例都出现超出时间限制。
+public class Solution extends GuessGame { public int guessNumber(int n) { int left = 1; int right = n; while (left &amp;lt; right) { int mid = (right + left) / 2; if (guess(mid) == -1) { right = mid - 1; } else if (guess(mid) == 1) { left = mid + 1; } else { return mid; } } return left; } } 参考了官方题解后发觉，(right + left)可能会导致超出int的范围，需要转换为left + (right - left)。</description></item><item><title>每日温度</title><link>https://chenhaoqing.github.io/posts/leetcode/739_%E6%AF%8F%E6%97%A5%E6%B8%A9%E5%BA%A6/</link><pubDate>Sun, 03 Jul 2022 23:43:00 +0800</pubDate><guid>https://chenhaoqing.github.io/posts/leetcode/739_%E6%AF%8F%E6%97%A5%E6%B8%A9%E5%BA%A6/</guid><description>题目 难度：中等
 描述 给定一个整数数组 temperatures ，表示每天的温度，返回一个数组 answer ，其中 answer[i] 是指对于第 i 天，下一个更高温度出现在几天后。如果气温在这之后都不会升高，请在该位置用 0 来代替。
 示例 示例 1:
 输入: temperatures = [73,74,75,71,69,72,76,73]
@@ -12,18 +23,7 @@
 解题思路 暴力法 题目是求下一个更高温度是出现在几天后；因此，针对数组中的每一个元素，遍历其之后的所有元素，找到第一个比其更高的温度后，两者的数组下标差值即为答案。
 单调栈 可以观察得知，假如有元素从左到右为A-&amp;gt;B-&amp;gt;C。如果C的值比B小，则C必不可能为比A值大的第一个元素（因为在其左边的B也会比A值大）。因此，在遍历数组的过程中，可以利用此特性，借用栈实现单调递减栈，减少比较的次数。
 具体实现方式为：将新遍历到的数组元素A与栈顶元素B（栈中实际存储数组的下标，比较时需要转换为数组中的实际元素值）做大小比较。
-如果A &amp;gt; B的大，则表明A为比B值更大的第一个元素；求两者的数组下标差值即可。并将B出栈，持续比较A与B的大小关系，直到栈为空或者A &amp;lt;= B为止 如果A &amp;lt;= B，则表明还未找到比B大的第一个元素，需要将A入栈，遍历下一个数组元素 我的题解 暴力法 class Solution { public int[] dailyTemperatures(int[] temperatures) { int[] ans = new int[temperatures.</description></item><item><title>猜数字大小</title><link>https://chenhaoqing.github.io/posts/leetcode/374_%E7%8C%9C%E6%95%B0%E5%AD%97%E5%A4%A7%E5%B0%8F/</link><pubDate>Sat, 02 Jul 2022 11:43:00 +0800</pubDate><guid>https://chenhaoqing.github.io/posts/leetcode/374_%E7%8C%9C%E6%95%B0%E5%AD%97%E5%A4%A7%E5%B0%8F/</guid><description>题目 难度：简单
-描述 猜数字游戏的规则如下：
-每轮游戏，我都会从1到n随机选择一个数字。 请你猜选出的是哪个数字。 如果你猜错了，我会告诉你，你猜测的数字比我选出的数字是大了还是小了。 你可以通过调用一个预先定义好的接口int guess(int num)来获取猜测结果，返回值一共有3种可能的情况（-1，1或0）：
--1：我选出的数字比你猜的数字小 pick &amp;lt; num 1：我选出的数字比你猜的数字大 pick &amp;gt; num 0：我选出的数字和你猜的数字一样。恭喜！你猜对了！pick == num 返回我选出的数字。 示例 示例 1:
-输入：n = 10, pick = 6
-输出：6
-示例 2：
-输入：n = 1, pick = 1
-输出：1
-解题思路 通过二分查找不断缩减范围，直至找到最终结果。
-关键点 一开始提交的为下面的版本，多个用例都出现超出时间限制。
-public class Solution extends GuessGame { public int guessNumber(int n) { int left = 1; int right = n; while (left &amp;lt; right) { int mid = (right + left) / 2; if (guess(mid) == -1) { right = mid - 1; } else if (guess(mid) == 1) { left = mid + 1; } else { return mid; } } return left; } } 参考了官方题解后发觉，(right + left)可能会导致超出int的范围，需要转换为left + (right - left)。</description></item><item><title>操作后的最大异或和</title><link>https://chenhaoqing.github.io/posts/leetcode/2317_%E6%93%8D%E4%BD%9C%E5%90%8E%E7%9A%84%E6%9C%80%E5%A4%A7%E5%BC%82%E6%88%96%E5%92%8C/</link><pubDate>Sat, 02 Jul 2022 11:43:00 +0800</pubDate><guid>https://chenhaoqing.github.io/posts/leetcode/2317_%E6%93%8D%E4%BD%9C%E5%90%8E%E7%9A%84%E6%9C%80%E5%A4%A7%E5%BC%82%E6%88%96%E5%92%8C/</guid><description>题目 难度：中等
+如果A &amp;gt; B的大，则表明A为比B值更大的第一个元素；求两者的数组下标差值即可。并将B出栈，持续比较A与B的大小关系，直到栈为空或者A &amp;lt;= B为止 如果A &amp;lt;= B，则表明还未找到比B大的第一个元素，需要将A入栈，遍历下一个数组元素 我的题解 暴力法 class Solution { public int[] dailyTemperatures(int[] temperatures) { int[] ans = new int[temperatures.</description></item><item><title>操作后的最大异或和</title><link>https://chenhaoqing.github.io/posts/leetcode/2317_%E6%93%8D%E4%BD%9C%E5%90%8E%E7%9A%84%E6%9C%80%E5%A4%A7%E5%BC%82%E6%88%96%E5%92%8C/</link><pubDate>Sat, 02 Jul 2022 11:43:00 +0800</pubDate><guid>https://chenhaoqing.github.io/posts/leetcode/2317_%E6%93%8D%E4%BD%9C%E5%90%8E%E7%9A%84%E6%9C%80%E5%A4%A7%E5%BC%82%E6%88%96%E5%92%8C/</guid><description>题目 难度：中等
 描述 给你一个下标从0开始的整数数组nums。一次操作中，选择任意非负整数x和一个下标i，更新nums[i]为nums[i] AND (nums[i] XOR x)。
 注意，AND是逐位与运算，XOR是逐位异或运算。
 请你执行任意次更新操作，并返回nums中所有元素最大逐位异或和。

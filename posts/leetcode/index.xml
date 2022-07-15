@@ -1,4 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LeetCode on Chenhaoqing's Blog</title><link>https://chenhaoqing.github.io/posts/leetcode/</link><description>Recent content in LeetCode on Chenhaoqing's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 03 Jul 2022 23:43:00 +0800</lastBuildDate><atom:link href="https://chenhaoqing.github.io/posts/leetcode/index.xml" rel="self" type="application/rss+xml"/><item><title>每日温度</title><link>https://chenhaoqing.github.io/posts/leetcode/739_%E6%AF%8F%E6%97%A5%E6%B8%A9%E5%BA%A6/</link><pubDate>Sun, 03 Jul 2022 23:43:00 +0800</pubDate><guid>https://chenhaoqing.github.io/posts/leetcode/739_%E6%AF%8F%E6%97%A5%E6%B8%A9%E5%BA%A6/</guid><description>题目 难度：中等
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LeetCode on Chenhaoqing's Blog</title><link>https://chenhaoqing.github.io/posts/leetcode/</link><description>Recent content in LeetCode on Chenhaoqing's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 16 Jul 2022 00:10:00 +0800</lastBuildDate><atom:link href="https://chenhaoqing.github.io/posts/leetcode/index.xml" rel="self" type="application/rss+xml"/><item><title>猜数字大小</title><link>https://chenhaoqing.github.io/posts/leetcode/374_%E7%8C%9C%E6%95%B0%E5%AD%97%E5%A4%A7%E5%B0%8F/</link><pubDate>Sat, 16 Jul 2022 00:10:00 +0800</pubDate><guid>https://chenhaoqing.github.io/posts/leetcode/374_%E7%8C%9C%E6%95%B0%E5%AD%97%E5%A4%A7%E5%B0%8F/</guid><description>题目 难度：简单
+描述 猜数字游戏的规则如下：
+每轮游戏，我都会从1到n随机选择一个数字。 请你猜选出的是哪个数字。 如果你猜错了，我会告诉你，你猜测的数字比我选出的数字是大了还是小了。 你可以通过调用一个预先定义好的接口int guess(int num)来获取猜测结果，返回值一共有3种可能的情况（-1，1或0）：
+-1：我选出的数字比你猜的数字小 pick &amp;lt; num 1：我选出的数字比你猜的数字大 pick &amp;gt; num 0：我选出的数字和你猜的数字一样。恭喜！你猜对了！pick == num 返回我选出的数字。 示例 示例 1:
+输入：n = 10, pick = 6
+输出：6
+示例 2：
+输入：n = 1, pick = 1
+输出：1
+解题思路 通过二分查找不断缩减范围，直至找到最终结果。
+关键点 一开始提交的为下面的版本，多个用例都出现超出时间限制。
+public class Solution extends GuessGame { public int guessNumber(int n) { int left = 1; int right = n; while (left &amp;lt; right) { int mid = (right + left) / 2; if (guess(mid) == -1) { right = mid - 1; } else if (guess(mid) == 1) { left = mid + 1; } else { return mid; } } return left; } } 参考了官方题解后发觉，(right + left)可能会导致超出int的范围，需要转换为left + (right - left)。</description></item><item><title>每日温度</title><link>https://chenhaoqing.github.io/posts/leetcode/739_%E6%AF%8F%E6%97%A5%E6%B8%A9%E5%BA%A6/</link><pubDate>Sun, 03 Jul 2022 23:43:00 +0800</pubDate><guid>https://chenhaoqing.github.io/posts/leetcode/739_%E6%AF%8F%E6%97%A5%E6%B8%A9%E5%BA%A6/</guid><description>题目 难度：中等
 描述 给定一个整数数组 temperatures ，表示每天的温度，返回一个数组 answer ，其中 answer[i] 是指对于第 i 天，下一个更高温度出现在几天后。如果气温在这之后都不会升高，请在该位置用 0 来代替。
 示例 示例 1:
 输入: temperatures = [73,74,75,71,69,72,76,73]
@@ -24,18 +35,7 @@
 可知 7 是能得到的最大逐位异或和。
 注意，其他操作可能也能得到逐位异或和 7 。
 示例 2：
-输入：nums = [1,2,3,9,2]</description></item><item><title>猜数字大小</title><link>https://chenhaoqing.github.io/posts/leetcode/374_%E7%8C%9C%E6%95%B0%E5%AD%97%E5%A4%A7%E5%B0%8F/</link><pubDate>Sat, 02 Jul 2022 11:43:00 +0800</pubDate><guid>https://chenhaoqing.github.io/posts/leetcode/374_%E7%8C%9C%E6%95%B0%E5%AD%97%E5%A4%A7%E5%B0%8F/</guid><description>题目 难度：简单
-描述 猜数字游戏的规则如下：
-每轮游戏，我都会从1到n随机选择一个数字。 请你猜选出的是哪个数字。 如果你猜错了，我会告诉你，你猜测的数字比我选出的数字是大了还是小了。 你可以通过调用一个预先定义好的接口int guess(int num)来获取猜测结果，返回值一共有3种可能的情况（-1，1或0）：
--1：我选出的数字比你猜的数字小 pick &amp;lt; num 1：我选出的数字比你猜的数字大 pick &amp;gt; num 0：我选出的数字和你猜的数字一样。恭喜！你猜对了！pick == num 返回我选出的数字。 示例 示例 1:
-输入：n = 10, pick = 6
-输出：6
-示例 2：
-输入：n = 1, pick = 1
-输出：1
-解题思路 通过二分查找不断缩减范围，直至找到最终结果。
-关键点 一开始提交的为下面的版本，多个用例都出现超出时间限制。
-public class Solution extends GuessGame { public int guessNumber(int n) { int left = 1; int right = n; while (left &amp;lt; right) { int mid = (right + left) / 2; if (guess(mid) == -1) { right = mid - 1; } else if (guess(mid) == 1) { left = mid + 1; } else { return mid; } } return left; } } 参考了官方题解后发觉，(right + left)可能会导致超出int的范围，需要转换为left + (right - left)。</description></item><item><title>一维数组的动态和</title><link>https://chenhaoqing.github.io/posts/leetcode/1480_%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E5%8A%A8%E6%80%81%E5%92%8C/</link><pubDate>Sat, 02 Jul 2022 10:59:00 +0800</pubDate><guid>https://chenhaoqing.github.io/posts/leetcode/1480_%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E5%8A%A8%E6%80%81%E5%92%8C/</guid><description>题目 难度：简单
+输入：nums = [1,2,3,9,2]</description></item><item><title>一维数组的动态和</title><link>https://chenhaoqing.github.io/posts/leetcode/1480_%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E5%8A%A8%E6%80%81%E5%92%8C/</link><pubDate>Sat, 02 Jul 2022 10:59:00 +0800</pubDate><guid>https://chenhaoqing.github.io/posts/leetcode/1480_%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E5%8A%A8%E6%80%81%E5%92%8C/</guid><description>题目 难度：简单
 描述 给你一个数组 nums 。数组「动态和」的计算公式为：runningSum[i] = sum(nums[0]…nums[i]) 。
 请返回 nums 的动态和。
 示例 示例 1：
