@@ -3,7 +3,28 @@ Chenhaoqing's Blog</a>
 <button class="navbar-toggler navbar-dark" id=navbar-toggler type=button data-toggle=collapse data-target=#top-nav-items aria-label=menu>
 <span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse dynamic-navbar" id=top-nav-items><ul class="navbar-nav ml-auto"><li class=nav-item><a class=nav-link href=#home>Home</a></li><li class=nav-item><a class=nav-link href=#recent-posts>Recent Posts</a></li><li class=nav-item><a class=nav-link id=blog-link href=/posts/>Posts</a></li></ul></div></div><img src=/images/site/main-logo_hu864bbe108f1be1ae04b57f7f2fd9d631_5637_42x0_resize_box_3.png class=d-none id=main-logo alt=Logo>
 <img src=/images/site/inverted-logo_hu8376fd15465fef26ffe66b6bcf0ca686_13669_42x0_resize_box_3.png class=d-none id=inverted-logo alt="Inverted Logo"></nav><div class="container-fluid home" id=home><style>#homePageBackgroundImageDivStyled{background-image:url(/images/site/background_hu3d03a01dcc18bc5be0e67db3d8d209a6_182875_500x0_resize_q75_box.jpg)}@media(min-width:500px) and (max-width:800px){#homePageBackgroundImageDivStyled{background-image:url(/images/site/background_hu3d03a01dcc18bc5be0e67db3d8d209a6_182875_800x0_resize_q75_box.jpg)}}@media(min-width:801px) and (max-width:1200px){#homePageBackgroundImageDivStyled{background-image:url(/images/site/background_hu3d03a01dcc18bc5be0e67db3d8d209a6_182875_1200x0_resize_q75_box.jpg)}}@media(min-width:1201px) and (max-width:1500px){#homePageBackgroundImageDivStyled{background-image:url(/images/site/background_hu3d03a01dcc18bc5be0e67db3d8d209a6_182875_1500x0_resize_q75_box.jpg)}}@media(min-width:1501px){#homePageBackgroundImageDivStyled{background-image:url(/images/site/background.jpg)}}</style><span class=on-the-fly-behavior></span><div id=homePageBackgroundImageDivStyled class="background container-fluid"></div><div class="container content text-center"><img src=/images/author/author_hu398a5c0364e591bc5182f8696b8a6902_260279_148x148_fit_q75_box.jpg class="rounded-circle mx-auto d-block img-fluid" alt="Author Image"><h1 class=greeting>Hello World !</h1><div class=typing-carousel><span id=ityped class=ityped></span>
-<span class=ityped-cursor></span></div><ul id=typing-carousel-data><li>啥都学一点</li><li>啥都不精通</li></ul><a href=#recent-posts class=arrow-center aria-label="Read More - !"><i class="arrow bounce fa fa-chevron-down"></i></a></div></div><div class="container-fluid section-holder d-flex bg-white"><div class="container-fluid anchor pb-5 recent-posts-section"><h1 class=text-center><span id=recent-posts></span>Recent Posts</h1><div class=container><div class=row id=recent-post-cards><div class="col-lg-4 col-md-6 pt-2 post-card"><a href=/posts/booknotes/2023/%E6%97%A0%E5%90%8D%E4%B9%8B%E7%94%BA/ title=《无名之町》 class=post-card-link><div class=card><div class=card-head><img class=card-img-top src=/images/read-more.png alt="Card image cap"></div><div class=card-body><h5 class=card-title>《无名之町》</h5><p class="card-text post-summary">基本信息 《无名之町》
+<span class=ityped-cursor></span></div><ul id=typing-carousel-data><li>啥都学一点</li><li>啥都不精通</li></ul><a href=#recent-posts class=arrow-center aria-label="Read More - !"><i class="arrow bounce fa fa-chevron-down"></i></a></div></div><div class="container-fluid section-holder d-flex bg-white"><div class="container-fluid anchor pb-5 recent-posts-section"><h1 class=text-center><span id=recent-posts></span>Recent Posts</h1><div class=container><div class=row id=recent-post-cards><div class="col-lg-4 col-md-6 pt-2 post-card"><a href=/posts/ai/gpt-4/ title=GPT-4 class=post-card-link><div class=card><div class=card-head><img class=card-img-top src=/images/AI.jpeg alt="Card image cap"></div><div class=card-body><h5 class=card-title>GPT-4</h5><p class="card-text post-summary">导言 GPT-4是目前OpenAI最新发布的多模态大模型，支持文本、图像作为输入，以纯文本的形式(也包括以代码的形式)作为输出。模型的能力非常强悍，在部分场景下，已经可以达到甚至超过现实世界人的水平。官方中有个例子是：以排名TOP 10%的结果通过律师资格认证考试（GTP-3.5模型还无法通过）。
+其实，GPT-4在2022年8月份就已经完成了训练，之后经历了近半年的测试调整后（涵盖安全、合规等方面），才在2023年3月份发布。
+训练 OpenAI基于微软云搭建了超级计算集群用于模型训练，GPT-3.5是第一个在上面完成训练的模型。在训练GPT-3.5的过程中，他们发现并修复了一些问题。
+和以往的GPT模型一样，它也是用预测文章中下一个词的方式去训练的，也就是Language Modeling Loss。
+数据来源 训练数据有包括公开的数据，比如网络数据，也有购买的数据。有数学问题中的正确解和错误解，有弱推理也有强推理，有保持一致的也有互相矛盾的，也有多种意识形态。
+因为数据集中既有正确的信息，也有异常的信息，所以预训练后的base模型回答结果和人们所预期的还有很大的差距，所以他们采用了RLHF来做align微调。
+RLHF是用来控制模型更能知道用户问的是什么，用户更希望要的是什么。
+可预测的扩展性 一般情况下，大模型的训练代价非常大，非常耗费时间。我们需要先在小模型或者较小的数据集上去做消融实验，看看哪个想法work了，然后再去大的模型上做实验。
+但是对于语言模型，由于模型扩展得太大了，所以往往会出现即使在小模型中测试通过的想法，换到大模型中也无法work。而且，在大模型下的涌现能力，也是无法在小模型中观测到的。
+但是，OpenAI表示，他们可以准确的预测GPT-4的训练结果。在小模型训练出来结果后，就可以预测出如果把计算成本扩大，这个模型最后的训练性能是怎样的。
+能力 在目前的测试结果来看，GPT-4对文字类的测试成果优秀，在编码及数学计算上，表现一般。
+GPT-4具备代码生成能力，有人用餐巾纸手画了一个网站草图作为输入，它就能生成相关代码，并可正常运行。
+支持多种语言，包括英文、中文等26种。
+视觉输入 GPT-4模型支持用户以图片、文字或两者相混的方式作为输入。
+官方有个例子，GPT-4可以读取用户提供的图片（用VGA插头插入手机充电口），为用户解释这张图片的搞笑点。
+可操纵性 在以往的模型中，只能用一个具有固定语气、风格的“人”来和用户交互。但是在GPT-4，允许通过配置的方式，在被允许的范围内，定制这个风格。
+官方有个例子，可以给模型定义使用苏格拉底的风格来答复问题。
+局限性 GPT-4还是会存在瞎编乱造、偏见的情况。 预训练的数据集是在2021年9月份之前的，但是在后续的微调版本中，不排除会加入新的数据集。 当前可以支持8192个Token的规模。（平均来说，一个英文单词会被分为1.3个Token，一个汉字会被分为2个Token）
+参考来源 [1] https://www.youtube.com/watch?v=K0SZ9mdygTw&list=RDCMUC8WCW6C3BWLKSZ5cMzD8Gyw&index=1
+[2] https://openai.com/research/gpt-4
+[3] https://wanzhanyong.blog.caixin.com/archives/265251</p></div><div class=card-footer><span class=float-left>April 1, 2023</span>
+<a href=/posts/ai/gpt-4/ title=Read class="float-right btn btn-outline-info btn-sm">Read</a></div></div></a></div><div class="col-lg-4 col-md-6 pt-2 post-card"><a href=/posts/booknotes/2023/%E6%97%A0%E5%90%8D%E4%B9%8B%E7%94%BA/ title=《无名之町》 class=post-card-link><div class=card><div class=card-head><img class=card-img-top src=/images/read-more.png alt="Card image cap"></div><div class=card-body><h5 class=card-title>《无名之町》</h5><p class="card-text post-summary">基本信息 《无名之町》
 作者: 东野圭吾
 阅读方式：喜马拉雅-电子书
 读后感 评分：5分（满分5分）
@@ -25,23 +46,7 @@ ISBN: 9787548042624
 想指责别人时，学会说“如果我是你”
 有效倾听首先应该是用心地聆听对方的谈话，不仅要听，更要听得清、听得懂。
 “模拟幽默法”，就是把大家熟悉的原本的语言情境，移置新意，与原意形成对照，从而产生不协调之趣，造成幽默感。</p></div><div class=card-footer><span class=float-left>February 23, 2023</span>
-<a href=/posts/booknotes/2023/%E6%B2%9F%E9%80%9A%E7%9A%84%E8%89%BA%E6%9C%AF/ title=Read class="float-right btn btn-outline-info btn-sm">Read</a></div></div></a></div><div class="col-lg-4 col-md-6 pt-2 post-card"><a href=/posts/booknotes/2023/%E8%9B%87%E5%8F%A3%E6%A2%A6%E5%BC%80%E5%A7%8B%E7%9A%84%E5%9C%B0%E6%96%B9/ title=《蛇口，梦开始的地方》 class=post-card-link><div class=card><div class=card-head><img class=card-img-top src=/images/read-more.png alt="Card image cap"></div><div class=card-body><h5 class=card-title>《蛇口，梦开始的地方》</h5><p class="card-text post-summary">基本信息 《蛇口，梦开始的地方》
-作者: 许永军 / 刘伟
-出版社: 人民日报出版社
-副标题: 致敬改革开放40年 出版年: 2018-9
-ISBN: 9787511555151
-读后感 评分：2分（满分5分）
-以在蛇口试验区发生的，或与蛇口试验区相关的人物、事件为故事背景，结合历史环境、事态发展及结果，重点突出蛇口敢为人先、大胆突破的气质，进而用于致敬改革开放。
-摘抄记录 蛇口试验区的主要领导者，袁庚
-1978年6月3日，港澳经济考察团就《港澳经济考察报告（汇报提纲）》向中央政治局进行汇报。报告中认为港澳发展迅速的原因有五：
-有充裕的资金来源 有较为廉价的劳动力 购进原材料和技术设备比较方便 比较方便发展对外加工工业，利用外来资金和本地廉价劳动力进口设备、原材料和半成品，然后加工出口 产品适应性强 “时间就是金钱，效率就是生命，顾客就是皇帝，安全就是法律。事事有人管，人人有事管” &mdash; 1981年，袁庚提出用于激励大家的精神口号，后来被精简为“时间就是金钱，效率就是生命”
-为了激励运泥车司机多运多干，在蛇口首次实行了定额超产奖励&mdash;“四分钱奖金”
-当时承包方的施工队是国有的，沿袭的是“大锅饭”方式，搞平均主义，工人干劲不足。四航局车队长亲自试车，在一般工作状态下，一天拉四五十车没问题。所以最后定额55车的指标，工人每天完成55车定额，每车奖励两分钱；超出55车，每车奖励四分钱。
-“不讲多劳多得，不重视物质利益，对少数先进分子可以，对广大群众不行，一段时间可以，长期不行” &mdash; 邓小平在1928年12月13日中央一次会议上所做报告中的话。
-懒汉是管不好企业的，无知也不会出高效率
-任何一个有能力的人拒绝反思，都将使我们整个民族失去一次改进的微小的机会。
-“如果一艘船不知道该驶去哪个港口，那么任何方向吹来的风都不会是顺风” &ndash;《塔木德》</p></div><div class=card-footer><span class=float-left>February 13, 2023</span>
-<a href=/posts/booknotes/2023/%E8%9B%87%E5%8F%A3%E6%A2%A6%E5%BC%80%E5%A7%8B%E7%9A%84%E5%9C%B0%E6%96%B9/ title=Read class="float-right btn btn-outline-info btn-sm">Read</a></div></div></a></div></div></div></div></div><footer id=footer class="container-fluid text-center align-content-center footer pb-2"><div class="container pt-5"><div class="row text-left"><div class="col-md-4 col-sm-12"><h5>Navigation</h5><ul><li class=nav-item><a class=smooth-scroll href=https://chenhaoqing.github.io#recent-posts>Recent Posts</a></li></ul></div><div class="col-md-4 col-sm-12"><h5>Contact me:</h5><ul><li><a href=mailto:chenhq1991@foxmail.com target=_blank rel=noopener><span><i class="fas fa-envelope"></i></span> <span>chenhq1991@foxmail.com</span></a></li></ul></div></div></div><hr><div class=container><div class="row text-left"><div class=col-md-4><a id=theme href=https://github.com/hugo-toha/toha target=_blank rel=noopener><img src=/images/theme-logo_hu8376fd15465fef26ffe66b6bcf0ca686_13669_32x0_resize_box_3.png alt="Toha Theme Logo">
+<a href=/posts/booknotes/2023/%E6%B2%9F%E9%80%9A%E7%9A%84%E8%89%BA%E6%9C%AF/ title=Read class="float-right btn btn-outline-info btn-sm">Read</a></div></div></a></div></div></div></div></div><footer id=footer class="container-fluid text-center align-content-center footer pb-2"><div class="container pt-5"><div class="row text-left"><div class="col-md-4 col-sm-12"><h5>Navigation</h5><ul><li class=nav-item><a class=smooth-scroll href=https://chenhaoqing.github.io#recent-posts>Recent Posts</a></li></ul></div><div class="col-md-4 col-sm-12"><h5>Contact me:</h5><ul><li><a href=mailto:chenhq1991@foxmail.com target=_blank rel=noopener><span><i class="fas fa-envelope"></i></span> <span>chenhq1991@foxmail.com</span></a></li></ul></div></div></div><hr><div class=container><div class="row text-left"><div class=col-md-4><a id=theme href=https://github.com/hugo-toha/toha target=_blank rel=noopener><img src=/images/theme-logo_hu8376fd15465fef26ffe66b6bcf0ca686_13669_32x0_resize_box_3.png alt="Toha Theme Logo">
 Toha</a></div><div class="col-md-4 text-center">© 2022 Copyright.</div><div class="col-md-4 text-right"><a id=hugo href=https://gohugo.io/ target=_blank rel=noopener>Powered by
 <img src=/images/hugo-logo.svg alt="Hugo Logo" height=18></a></div></div></div></footer><script type=text/javascript src=/js/jquery-3.4.1.min.js></script>
 <script type=text/javascript src=/js/popper.min.js></script>
